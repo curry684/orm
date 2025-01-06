@@ -6,6 +6,7 @@ namespace Doctrine\ORM\Mapping;
 
 use Attribute;
 use Doctrine\Common\Annotations\Annotation\NamedArgumentConstructor;
+use Doctrine\Common\Collections\Order;
 
 /**
  * @Annotation
@@ -16,12 +17,12 @@ use Doctrine\Common\Annotations\Annotation\NamedArgumentConstructor;
 final class OrderBy implements MappingAttribute
 {
     /**
-     * @var array<string>
+     * @var array<string, string|Order>
      * @readonly
      */
     public $value;
 
-    /** @param array<string> $value */
+    /** @param array<string, string|Order> $value */
     public function __construct(array $value)
     {
         $this->value = $value;
